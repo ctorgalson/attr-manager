@@ -1,0 +1,14 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["./src/bh-attrmanager.ts"],
+  "formatWithPrettier": true,
+  "plugin": [
+    "typedoc-plugin-coverage",
+    "typedoc-plugin-markdown",
+    "typedoc-plugin-mdn-links",
+    "typedoc-plugin-rename-defaults"
+  ],
+  "out": "docs",
+  "readme": "none"
+}
+

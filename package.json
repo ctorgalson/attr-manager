@@ -1,0 +1,66 @@
+{
+  "name": "bh-attrmanager",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "Utility library for toggling HTML attributes and optionally restoring them to their original values.",
+  "homepage": "https://github.com/ctorgalson/bh-attrmanager",
+  "license": "GPL-2.0-or-later",
+  "main": "dist/js/bh-attrmanager.js",
+  "module": "dist/js/bh-attrmanager.esm.js",
+  "types": "dist/js/bh-attrmanager.d.ts",
+  "exports": {
+    ".": {
+      "import": "dist/js/bh-attrmanager.esm.js",
+      "browser": "dist/js/bh-attrmanager.js",
+      "require": "dist/js/bh-attrmanager.cjs",
+      "types": "dist/js/bh-attrmanager.d.ts"
+    },
+    "./*": "./*"
+  },
+  "keywords": [
+    "html",
+    "DOM"
+  ],
+  "author": "Christopher Torgalson",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ctorgalson/bh-attrmanager"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview",
+    "build": "concurrently --raw npm:build:*",
+    "build:docs": "typedoc --logLevel Verbose --coverageLabel 'Docs'",
+    "build:ts": "rollup --config",
+    "start": "npm run build ; npm run watch",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest",
+    "watch": "concurrently --kill-others --raw npm:watch:*",
+    "watch:md": "onchange 'README.md' -- npm run build:docs",
+    "watch:ts": "onchange 'src/**/*.ts' -- concurrently --raw npm:build:ts npm:build:docs"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^1.0.0",
+    "@rollup/plugin-typescript": "^12.3.0",
+    "@vitest/coverage-v8": "^4.1.11",
+    "concurrently": "^10.0.5",
+    "jsdom": "^30.0.1",
+    "onchange": "^7.1.0",
+    "prettier": "^3.9.6",
+    "rollup": "^4.63.0",
+    "typedoc-plugin-coverage": "^4.0.3",
+    "typedoc-plugin-markdown": "^4.13.0",
+    "typedoc-plugin-mdn-links": "^5.1.1",
+    "typedoc-plugin-rename-defaults": "^0.7.3",
+    "typescript": "~6.0.2",
+    "vite": "^8.2.2",
+    "vitest": "^4.1.11"
+  },
+  "dependencies": {
+    "@rollup/plugin-node-resolve": "^16.0.3"
+  }
+}
