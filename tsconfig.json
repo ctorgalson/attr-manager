@@ -23,6 +23,8 @@
   // "include": ["src"]
 
   "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist/js",
     "allowJs": true,
     "declaration": true,
     "declarationDir": "dist/js",
