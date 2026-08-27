@@ -9,6 +9,7 @@ const plugins = [nodeResolve(), typescript({ tsconfig: "./tsconfig.json" })];
 const minifyPlugin = terser({
   compress: {
     module: true,
+    passes: 2,
     toplevel: true,
   },
   ecma: 2020,
@@ -20,7 +21,7 @@ const minifyPlugin = terser({
 });
 const umdCfg = {
   format: "umd",
-  name: "BhAttrmanager",
+  name: "BhAttrManager",
   exports: "default",
 };
 
