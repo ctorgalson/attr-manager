@@ -1,5 +1,5 @@
 /** A type used to define possible values for BhAttrConfig's `inital` prop. */
-export type BhAttrInitialValue = "whenTrue" | "whenFalse";
+export type BhAttrInitialValue = "whenTrue" | "whenFalse" | null;
 
 /** A type used to define the config option used by the constructor. */
 export type BhAttrConfig = Record<
@@ -51,6 +51,14 @@ export default class BhAttrManager {
       name,
       { whenTrue: trueValue, whenFalse, initial, fixed },
     ] of Object.entries(config)) {
+      if (trueValue === undefined) {
+        throw new Error("BhAttrManager: each attribute must supply a `whenTrue` value.");
+      }
+
+      if (initial !== undefined && !["whenTrue", "whenFalse", null].includes(initial)) {
+        throw new Error("BhAttrManager: if attributes supply an `initial` value, it must be one of `whenTrue`, `whenFalse`, or `null`.");
+      }
+
       const originalVal = el.getAttribute(name);
       this.original.push([name, originalVal]);
 
