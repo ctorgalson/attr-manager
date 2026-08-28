@@ -11,7 +11,7 @@ export type BhAttrConfig = Record<
     whenFalse?: string | null;
     /** The value set for an attribute in the constructor. */
     initial?: BhAttrInitialValue;
-    /** Whether this attribute will be affected by .toggle() (no if `true`). */
+    /** Whether this attribute will be ignored by `.toggle()`. */
     fixed?: boolean;
   }
 >;
@@ -24,7 +24,7 @@ export interface BhNormalizedAttr {
   falseValue: string | null;
   /** The name of the attribute under management. */
   name: string;
-  /** Whether this attribute will be affected by .toggle() (no if `true`). */
+  /** Whether this attribute will be ignored by `.toggle()`. */
   fixed: boolean;
 }
 
@@ -34,7 +34,7 @@ export interface BhNormalizedAttr {
 export default class BhAttrManager {
   /** An array of the attributes under management in BhNormalizedAttr form. */
   private readonly items: BhNormalizedAttr[] = [];
-  /** An array of the incoming values of the attributes under management. */
+  /** An array of the attribute values (used to restore initial DOM state). */
   private readonly original: [string, string | null][] = [];
   /** A var used to track the state of the attributes under management. */
   private currentState: boolean = false;
