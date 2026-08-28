@@ -6,7 +6,7 @@
 
 # Interface: BhNormalizedAttr
 
-Defined in: bh-attrmanager.ts:20
+Defined in: bh-attrmanager.ts:26
 
 An internal type: guarantees `falseValue` is never undefined.
 
@@ -16,7 +16,7 @@ An internal type: guarantees `falseValue` is never undefined.
 
 > **falseValue**: `string` \| `null`
 
-Defined in: bh-attrmanager.ts:24
+Defined in: bh-attrmanager.ts:30
 
 The value set for an attribute when currentState is `false`.
 
@@ -26,9 +26,9 @@ The value set for an attribute when currentState is `false`.
 
 > **fixed**: `boolean`
 
-Defined in: bh-attrmanager.ts:28
+Defined in: bh-attrmanager.ts:34
 
-Whether this attribute will be affected by .toggle() (no if `true`).
+Whether this attribute will be ignored by `.toggle()`.
 
 ---
 
@@ -36,7 +36,7 @@ Whether this attribute will be affected by .toggle() (no if `true`).
 
 > **name**: `string`
 
-Defined in: bh-attrmanager.ts:26
+Defined in: bh-attrmanager.ts:32
 
 The name of the attribute under management.
 
@@ -46,6 +46,6 @@ The name of the attribute under management.
 
 > **trueValue**: `string` \| `null`
 
-Defined in: bh-attrmanager.ts:22
+Defined in: bh-attrmanager.ts:28
 
 The value set for an attribute when currentState is `true`.

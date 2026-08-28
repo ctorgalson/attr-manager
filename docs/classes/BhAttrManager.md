@@ -6,7 +6,7 @@
 
 # Class: BhAttrManager
 
-Defined in: bh-attrmanager.ts:34
+Defined in: bh-attrmanager.ts:50
 
 A class used to create and/or enforce HTMLElement attribute values.
 
@@ -16,7 +16,7 @@ A class used to create and/or enforce HTMLElement attribute values.
 
 > **new BhAttrManager**(`el`, `config`, `restorers?`): `BhAttrManager`
 
-Defined in: bh-attrmanager.ts:43
+Defined in: bh-attrmanager.ts:79
 
 Constructs a new BhAttrManager instance.
 
@@ -26,13 +26,19 @@ Constructs a new BhAttrManager instance.
 
 [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)
 
+The HTMLElement to manage.
+
 ##### config
 
 [`BhAttrConfig`](../type-aliases/BhAttrConfig.md)
 
+The attribute configuration.
+
 ##### restorers?
 
-() => `void`[]
+[`BhAttrRestorerEntry`](../interfaces/BhAttrRestorerEntry.md)[]
+
+Optional restorer array for lifecycle management.
 
 #### Returns
 
@@ -40,13 +46,38 @@ Constructs a new BhAttrManager instance.
 
 ## Methods
 
+### destroy()
+
+> **destroy**(): `void`
+
+Defined in: bh-attrmanager.ts:171
+
+Clears internal state and self-removes from `restorers`.
+
+Use this to clean up state without affecting the DOM.
+
+#### Returns
+
+`void`
+
+---
+
 ### restore()
 
-> **restore**(): `void`
+> **restore**(`teardown?`): `void`
 
-Defined in: bh-attrmanager.ts:84
+Defined in: bh-attrmanager.ts:156
 
-Restores original state of attributes managed by this instance.
+Restores original state of attributes.
+
+#### Parameters
+
+##### teardown?
+
+`boolean` = `false`
+
+If `true` (default), also clears internal state and self-removes from
+`restorers`.
 
 #### Returns
 
@@ -58,7 +89,7 @@ Restores original state of attributes managed by this instance.
 
 > **toggle**(`condition?`): `void`
 
-Defined in: bh-attrmanager.ts:73
+Defined in: bh-attrmanager.ts:139
 
 Toggles state of attributes managed by this instance.
 
@@ -67,6 +98,8 @@ Toggles state of attributes managed by this instance.
 ##### condition?
 
 `boolean`
+
+The condition to set. If omitted, toggles the current state.
 
 #### Returns
 

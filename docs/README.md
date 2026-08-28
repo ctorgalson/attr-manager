@@ -10,6 +10,7 @@
 
 ## Interfaces
 
+- [BhAttrRestorerEntry](interfaces/BhAttrRestorerEntry.md)
 - [BhNormalizedAttr](interfaces/BhNormalizedAttr.md)
 
 ## Type Aliases
