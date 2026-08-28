@@ -79,7 +79,7 @@ export default class BhAttrManager {
   constructor(
     private readonly el: HTMLElement,
     config: BhAttrConfig,
-    restorers?: RestorerEntry[],
+    restorers?: BhAttrRestorerEntry[],
   ) {
     let hasExplicitInitial = false;
 
@@ -112,10 +112,7 @@ export default class BhAttrManager {
       this.items.push({ name, trueValue, falseValue, fixed: !!fixed });
 
       if (initial !== undefined) {
-        this.applyValue(
-          name,
-          initial === "whenTrue" ? trueValue : falseValue,
-        );
+        this.applyValue(name, initial === "whenTrue" ? trueValue : falseValue);
         if (!hasExplicitInitial) {
           this.currentState = initial === "whenTrue";
           hasExplicitInitial = true;
