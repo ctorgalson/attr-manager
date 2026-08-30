@@ -1,4 +1,4 @@
-# BhAttrManager
+# AttrManager
 
 ![Documentation coverage](docs/coverage.svg)
 ![Test coverage: branches](coverage/branches.svg) 
@@ -15,21 +15,32 @@ DOM state, and lifecycle cleanup.
 For detailed API documentation and reference, see:
 
 - [Full API Reference](./docs/README.md)
-- [Constructor Options](./docs/BhAttrManager.constructor.html)
-- [Methods](./docs/BhAttrManager.html#methods)
+- [Constructor Options](./docs/AttrManager.constructor.html)
+- [Methods](./docs/AttrManager.html#methods)
 
 ## Installation
 
 ```bash
-npm install bh-attrmanager  # or link local
+npm install @bedlamhotel/attrmanager
 ```
+
+**Note:** This package is published to GitHub Packages. To install, add an
+`.npmrc` file to your project (or use `--registry`):
+
+```
+@bedlamhotel:registry=https://npm.pkg.github.com
+```
+
+You'll also need a GitHub personal access token with `read:packages` scope.
+See the [GitHub Packages docs](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages)
+for details.
 
 ## Basic Usage
 
 ```typescript
-import BhAttrManager from 'bh-attrmanager';
+import AttrManager from '@bedlamhotel/attrmanager';
 
-const manager = new BhAttrManager(element, {
+const manager = new AttrManager(element, {
   'data-active': {
     whenTrue: 'true',
     whenFalse: null,
@@ -56,7 +67,7 @@ carousel slides:
 ```typescript
 const slideElement = document.querySelector('[data-slide]') as HTMLElement;
 
-const slideAttrs = new BhAttrManager(slideElement, {
+const slideAttrs = new AttrManager(slideElement, {
   'tabindex': {
     whenTrue: '0',      // Focusable when active
     whenFalse: '-1',    // Not focusable when inactive
@@ -87,7 +98,7 @@ Handle attributes that are present/absent rather than value-based:
 ```typescript
 const checkbox = document.querySelector('input[type="checkbox"]') as HTMLInputElement;
 
-const checkedState = new BhAttrManager(checkbox, {
+const checkedState = new AttrManager(checkbox, {
   'checked': {
     whenTrue: '',       // Empty string means attribute is present (boolean)
     whenFalse: null,    // null removes the attribute
@@ -109,7 +120,7 @@ Another example with `hidden`:
 ```typescript
 const dialog = document.querySelector('.modal-dialog') as HTMLElement;
 
-const hiddenState = new BhAttrManager(dialog, {
+const hiddenState = new AttrManager(dialog, {
   'hidden': {
     whenTrue: '',    // Attribute present = visible state
     whenFalse: null, // Attribute removed = hidden state
@@ -124,10 +135,10 @@ Track multiple managers and restore all at once (e.g., responsive mode change):
 
 ```typescript
 // Create a shared restorer array
-const globalRestorers: BhAttrRestorerEntry[] = [];
+const globalRestorers: RestorerEntry[] = [];
 
 // Register managers with the same restorer array
-const slide1Attrs = new BhAttrManager(
+const slide1Attrs = new AttrManager(
   slide1Element,
   {
     tabindex: { whenTrue: '0', whenFalse: '-1', initial: 'whenTrue' },
@@ -136,7 +147,7 @@ const slide1Attrs = new BhAttrManager(
   globalRestorers
 );
 
-const slide2Attrs = new BhAttrManager(
+const slide2Attrs = new AttrManager(
   slide2Element,
   {
     tabindex: { whenTrue: '0', whenFalse: '-1', initial: 'whenFalse' }
@@ -168,7 +179,7 @@ slide1Attrs.destroy();
 #### With Automatic Cleanup (Default)
 
 ```typescript
-const slider = new BhAttrManager(element, {
+const slider = new AttrManager(element, {
   'aria-hidden': {
     whenTrue: 'false',
     whenFalse: 'true',
@@ -188,7 +199,7 @@ slider.toggle(false);
 #### With Cleanup (Teardown)
 
 ```typescript
-const slider = new BhAttrManager(element, {
+const slider = new AttrManager(element, {
   'aria-hidden': {
     whenTrue: 'false',
     whenFalse: 'true',
@@ -206,7 +217,7 @@ slider.restore(true);
 #### Explicit Destroy Without Restore
 
 ```typescript
-const slider = new BhAttrManager(element, {
+const slider = new AttrManager(element, {
   'aria-hidden': {
     whenTrue: 'false',
     whenFalse: 'true',
@@ -228,7 +239,7 @@ When you have a reference but no restorer array:
 
 ```typescript
 // No restorers provided
-const standalone = new BhAttrManager(element, {
+const standalone = new AttrManager(element, {
   'data-state': {
     whenTrue: 'active',
     whenFalse: 'inactive',
@@ -248,13 +259,13 @@ standalone.destroy();
 ### Types
 
 ```typescript
-type BhAttrInitialValue = "whenTrue" | "whenFalse" | null;  // See: [BhAttrInitialValue](./docs/BhAttrInitialValue.html)
+type AttrInitialValue = "whenTrue" | "whenFalse" | null;  // See: [AttrInitialValue](./docs/AttrInitialValue.html)
 
-interface BhAttrConfig {  // See: [BhAttrConfig](./docs/BhAttrConfig.html)
+interface AttrConfig {  // See: [AttrConfig](./docs/AttrConfig.html)
   [key: string]: {
     whenTrue: string | null;
     whenFalse?: string | null;
-    initial?: BhAttrInitialValue;
+    initial?: AttrInitialValue;
     fixed?: boolean;  // Skip this attribute during toggle()
   };
 }
@@ -265,24 +276,24 @@ interface BhAttrConfig {  // See: [BhAttrConfig](./docs/BhAttrConfig.html)
 ```typescript
 constructor(
   el: HTMLElement,
-  config: BhAttrConfig,
-  restorers?: BhAttrRestorerEntry[],
+  config: AttrConfig,
+  restorers?: RestorerEntry[],
 )
 ```
 
 | Parameter   | Description                                              |
 | ----------- | -------------------------------------------------------- |
-| [`el`](./docs/BhAttrManager.constructor.html#el)        | The element to manage attributes on                      |
-| [`config`](./docs/BhAttrManager.constructor.html#config)    | Configuration object mapping attribute names ([BhAttrConfig](./docs/BhAttrConfig.html)) |
-| [`restorers`](./docs/BhAttrManager.constructor.html#restorers) | Optional array for tracking managers ([BhAttrRestorerEntry](./docs/BhAttrRestorerEntry.html)) |
+| [`el`](./docs/AttrManager.constructor.html#el)        | The element to manage attributes on                      |
+| [`config`](./docs/AttrManager.constructor.html#config)    | Configuration object mapping attribute names ([AttrConfig](./docs/AttrConfig.html)) |
+| [`restorers`](./docs/AttrManager.constructor.html#restorers) | Optional array for tracking managers ([RestorerEntry](./docs/RestorerEntry.html)) |
 
 ### Methods
 
 | Method          | Signature                | Description                              |
 | --------------- | ------------------------ | ---------------------------------------- |
-| [`toggle()`](./docs/BhAttrManager.html#toggle)  | `(condition?: boolean)`  | Toggle all managed attributes            |
-| [`restore()`](./docs/BhAttrManager.html#restore)| `(teardown?: boolean)`   | Revert to original DOM state             |
-| [`destroy()`](./docs/BhAttrManager.html#destroy)| `()`                     | Clear internal state and remove if regen |
+| [`toggle()`](./docs/AttrManager.html#toggle)  | `(condition?: boolean)`  | Toggle all managed attributes            |
+| [`restore()`](./docs/AttrManager.html#restore)| `(teardown?: boolean)`   | Revert to original DOM state             |
+| [`destroy()`](./docs/AttrManager.html#destroy)| `()`                     | Clear internal state and remove if regen |
 
 ### Lifecycle Flow
 
@@ -307,7 +318,7 @@ Invalid configurations throw descriptive errors:
 
 ```typescript
 // Missing required whenTrue field
-new BhAttrManager(el, {
+new AttrManager(el, {
   myAttr: {
     whenFalse: 'x',  // ❌ Error: must supply a `whenTrue` value
     initial: 'whenTrue'
@@ -315,7 +326,7 @@ new BhAttrManager(el, {
 });
 
 // Invalid initial value
-new BhAttrManager(el, {
+new AttrManager(el, {
   myAttr: {
     whenTrue: 'a',
     whenFalse: 'b',

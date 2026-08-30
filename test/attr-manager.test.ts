@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
-import BhAttrManager, { BhAttrRestorerEntry } from "../src/bh-attrmanager";
+import BhAttrManager, { BhAttrRestorerEntry } from "../src/attr-manager";
 import { buildTestDom, setup } from "./fixtures";
 
 setup();

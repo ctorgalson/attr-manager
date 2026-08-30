@@ -1,19 +1,19 @@
-**bh-attrmanager**
+**@bedlamhotel/attrmanager**
 
 ---
 
-# bh-attrmanager
+# @bedlamhotel/attrmanager
 
 ## Classes
 
-- [BhAttrManager](classes/BhAttrManager.md)
+- [AttrManager](classes/AttrManager.md)
 
 ## Interfaces
 
-- [BhAttrRestorerEntry](interfaces/BhAttrRestorerEntry.md)
-- [BhNormalizedAttr](interfaces/BhNormalizedAttr.md)
+- [NormalizedAttr](interfaces/NormalizedAttr.md)
+- [RestorerEntry](interfaces/RestorerEntry.md)
 
 ## Type Aliases
 
-- [BhAttrConfig](type-aliases/BhAttrConfig.md)
-- [BhAttrInitialValue](type-aliases/BhAttrInitialValue.md)
+- [AttrConfig](type-aliases/AttrConfig.md)
+- [AttrInitialValue](type-aliases/AttrInitialValue.md)

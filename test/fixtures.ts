@@ -3,7 +3,7 @@
  */
 
 import { afterEach } from "vitest";
-import BhAttrManager from "../src/bh-attrmanager";
+import BhAttrManager from "../src/attr-manager";
 
 /**
  * Build test DOM elements.

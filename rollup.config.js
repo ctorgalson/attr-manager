@@ -14,39 +14,39 @@ const minifyPlugin = terser({
   },
   ecma: 2020,
   format: {
-    preamble: `/*! bh-attrmanager ${pkg.version} — © Christopher Torgalson */`,
+    preamble: `/*! attr-manager ${pkg.version} — © Christopher Torgalson */`,
   },
   keep_classnames: true,
   keep_fnames: false,
 });
 const umdCfg = {
   format: "umd",
-  name: "BhAttrManager",
+  name: "AttrManager",
   exports: "default",
 };
 
 export default {
-  input: "src/bh-attrmanager.ts",
+  input: "src/attr-manager.ts",
   plugins: plugins,
   output: [
     // UMD
-    { file: "dist/js/bh-attrmanager.js", ...umdCfg },
+    { file: "dist/js/attr-manager.js", ...umdCfg },
     {
-      file: "dist/js/bh-attrmanager.min.js",
+      file: "dist/js/attr-manager.min.js",
       ...umdCfg,
       plugins: [ minifyPlugin ],
     },
     // ESM
-    { file: "dist/js/bh-attrmanager.esm.js", format: "esm" },
+    { file: "dist/js/attr-manager.esm.js", format: "esm" },
     {
-      file: "dist/js/bh-attrmanager.esm.js",
+      file: "dist/js/attr-manager.esm.js",
       format: "esm",
       plugins: [ minifyPlugin ],
     },
     // CJS
-    { file: "dist/js/bh-attrmanager.cjs", format: "cjs", exports: "default" },
+    { file: "dist/js/attr-manager.cjs", format: "cjs", exports: "default" },
     {
-      file: "dist/js/bh-attrmanager.cjs",
+      file: "dist/js/attr-manager.cjs",
       format: "cjs",
       exports: "default",
       plugins: [ minifyPlugin ],
