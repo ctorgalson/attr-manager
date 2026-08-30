@@ -16,9 +16,10 @@ DOM state, and lifecycle cleanup.
 
 For detailed API documentation and reference, see:
 
-- [Full API Reference](./docs/README.md)
-- [Constructor Options](./docs/AttrManager.constructor.html)
-- [Methods](./docs/AttrManager.html#methods)
+- [Full API Reference](https://github.com/ctorgalson/attr-manager/blob/main/docs/README.md)
+- [Class: AttrManager](https://github.com/ctorgalson/attr-manager/blob/main/docs/classes/AttrManager.md)
+- [Constructor Options](https://github.com/ctorgalson/attr-manager/blob/main/docs/classes/AttrManager.md#constructor)
+- [Methods](https://github.com/ctorgalson/attr-manager/blob/main/docs/classes/AttrManager.md#methods)
 
 ## Installation
 
@@ -250,9 +251,9 @@ standalone.destroy();
 ### Types
 
 ```typescript
-type AttrInitialValue = "whenTrue" | "whenFalse" | null;  // See: [AttrInitialValue](./docs/AttrInitialValue.html)
+type AttrInitialValue = "whenTrue" | "whenFalse" | null;  // See: [AttrInitialValue](https://github.com/ctorgalson/attr-manager/blob/main/docs/type-aliases/AttrInitialValue.md)
 
-interface AttrConfig {  // See: [AttrConfig](./docs/AttrConfig.html)
+interface AttrConfig {  // See: [AttrConfig](https://github.com/ctorgalson/attr-manager/blob/main/docs/type-aliases/AttrConfig.md)
   [key: string]: {
     whenTrue: string | null;
     whenFalse?: string | null;
@@ -274,17 +275,17 @@ constructor(
 
 | Parameter   | Description                                              |
 | ----------- | -------------------------------------------------------- |
-| [`el`](./docs/AttrManager.constructor.html#el)        | The element to manage attributes on                      |
-| [`config`](./docs/AttrManager.constructor.html#config)    | Configuration object mapping attribute names ([AttrConfig](./docs/AttrConfig.html)) |
-| [`restorers`](./docs/AttrManager.constructor.html#restorers) | Optional array for tracking managers ([RestorerEntry](./docs/RestorerEntry.html)) |
+| [`el`](https://github.com/ctorgalson/attr-manager/blob/main/docs/classes/AttrManager.md#constructor)        | The element to manage attributes on                      |
+| [`config`](https://github.com/ctorgalson/attr-manager/blob/main/docs/classes/AttrManager.md#constructor)    | Configuration object mapping attribute names ([AttrConfig](https://github.com/ctorgalson/attr-manager/blob/main/docs/type-aliases/AttrConfig.md)) |
+| [`restorers`](https://github.com/ctorgalson/attr-manager/blob/main/docs/classes/AttrManager.md#constructor) | Optional array for tracking managers ([RestorerEntry](https://github.com/ctorgalson/attr-manager/blob/main/docs/interfaces/RestorerEntry.md)) |
 
 ### Methods
 
 | Method          | Signature                | Description                              |
 | --------------- | ------------------------ | ---------------------------------------- |
-| [`toggle()`](./docs/AttrManager.html#toggle)  | `(condition?: boolean)`  | Toggle all managed attributes            |
-| [`restore()`](./docs/AttrManager.html#restore)| `(teardown?: boolean)`   | Revert to original DOM state             |
-| [`destroy()`](./docs/AttrManager.html#destroy)| `()`                     | Clear internal state and remove if regen |
+| [`toggle()`](https://github.com/ctorgalson/attr-manager/blob/main/docs/classes/AttrManager.md#toggle)  | `(condition?: boolean)`  | Toggle all managed attributes            |
+| [`restore()`](https://github.com/ctorgalson/attr-manager/blob/main/docs/classes/AttrManager.md#restore)| `(teardown?: boolean)`   | Revert to original DOM state             |
+| [`destroy()`](https://github.com/ctorgalson/attr-manager/blob/main/docs/classes/AttrManager.md#destroy)| `()`                     | Clear internal state and remove if regen |
 
 ### Lifecycle Flow
 
