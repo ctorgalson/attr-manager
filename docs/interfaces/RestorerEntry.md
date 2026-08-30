@@ -6,7 +6,7 @@
 
 # Interface: RestorerEntry
 
-Defined in: attr-manager.ts:40
+Defined in: [attr-manager.ts:40](https://github.com/ctorgalson/attr-manager/blob/8bbb69282ea2012ea062c2fc2b6fd7b20aaf61cc/src/attr-manager.ts#L40)
 
 An entry in the `restorers` array.
 
@@ -16,7 +16,7 @@ An entry in the `restorers` array.
 
 > **id**: `string`
 
-Defined in: attr-manager.ts:42
+Defined in: [attr-manager.ts:42](https://github.com/ctorgalson/attr-manager/blob/8bbb69282ea2012ea062c2fc2b6fd7b20aaf61cc/src/attr-manager.ts#L42)
 
 Unique ID for self-removal.
 
@@ -26,7 +26,7 @@ Unique ID for self-removal.
 
 > **restore**: () => `void`
 
-Defined in: attr-manager.ts:44
+Defined in: [attr-manager.ts:44](https://github.com/ctorgalson/attr-manager/blob/8bbb69282ea2012ea062c2fc2b6fd7b20aaf61cc/src/attr-manager.ts#L44)
 
 Restore method.
 
