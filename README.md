@@ -1,10 +1,10 @@
 # AttrManager
 
-![Documentation coverage](docs/coverage.svg)
-![Test coverage: branches](coverage/branches.svg) 
-![Test coverage: functions](coverage/functions.svg) 
-![Test coverage: lines](coverage/lines.svg) 
-![Test coverage: statements](coverage/statements.svg) 
+<img src="docs/coverage.svg" alt="Documentation coverage">
+<img src="coverage/branches.svg" alt="Test coverage: branches">
+<img src="coverage/functions.svg" alt="Test coverage: functions">
+<img src="coverage/lines.svg" alt="Test coverage: lines">
+<img src="coverage/statements.svg" alt="Test coverage: statements">
 
 A TypeScript class for managing HTMLElement attribute values based on a boolean
 `currentState`. Automatically handles attribute toggling, restoration to original
