@@ -1,10 +1,12 @@
 # AttrManager
 
-<img src="docs/coverage.svg" alt="Documentation coverage">
-<img src="coverage/branches.svg" alt="Test coverage: branches">
-<img src="coverage/functions.svg" alt="Test coverage: functions">
-<img src="coverage/lines.svg" alt="Test coverage: lines">
-<img src="coverage/statements.svg" alt="Test coverage: statements">
+## Test coverage
+
+- documentation: <img src="https://raw.githubusercontent.com/ctorgalson/bh-attrmanager/main/docs/coverage.svg" alt="Documentation coverage">
+- branches: <img src="https://raw.githubusercontent.com/ctorgalson/bh-attrmanager/main/coverage/branches.svg" alt="Test coverage: branches">
+- functions: <img src="https://raw.githubusercontent.com/ctorgalson/bh-attrmanager/main/coverage/functions.svg" alt="Test coverage: functions">
+- lines: <img src="https://raw.githubusercontent.com/ctorgalson/bh-attrmanager/main/coverage/lines.svg" alt="Test coverage: lines">
+- statements: <img src="https://raw.githubusercontent.com/ctorgalson/bh-attrmanager/main/coverage/statements.svg" alt="Test coverage: statements">
 
 A TypeScript class for managing HTMLElement attribute values based on a boolean
 `currentState`. Automatically handles attribute toggling, restoration to original
