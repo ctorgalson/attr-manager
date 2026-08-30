@@ -6,7 +6,7 @@
 - branches: <img src="https://raw.githubusercontent.com/ctorgalson/attr-manager/main/coverage/branches.svg" alt="Test coverage: branches">
 - functions: <img src="https://raw.githubusercontent.com/ctorgalson/attr-manager/main/coverage/functions.svg" alt="Test coverage: functions">
 - lines: <img src="https://raw.githubusercontent.com/ctorgalson/attr-manager/main/coverage/lines.svg" alt="Test coverage: lines">
-- statements: <img src="https://raw.githubusercontent.com/ctorgalson/bh-attrmanager/main/coverage/statements.svg" alt="Test coverage: statements">
+- statements: <img src="https://raw.githubusercontent.com/ctorgalson/attr-manager/main/coverage/statements.svg" alt="Test coverage: statements">
 
 A TypeScript class for managing HTMLElement attribute values based on a boolean
 `currentState`. Automatically handles attribute toggling, restoration to original

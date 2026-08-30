@@ -37,7 +37,7 @@
     "build:ts": "rollup --config",
     "start": "npm run build ; npm run watch",
     "test": "vitest run",
-    "test:coverage": "vitest run --coverage && node scripts/vitest-coverage.cjs",
+    "test:coverage": "vitest run --coverage && sed -i \"s|$(pwd)/||g\" coverage/coverage-summary.json && node scripts/vitest-coverage.cjs",
     "test:watch": "vitest",
     "coverage:badges": "node scripts/typedoc-coverage.cjs && node scripts/vitest-coverage.cjs",
     "watch": "concurrently --kill-others --raw npm:watch:*",
