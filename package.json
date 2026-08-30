@@ -1,9 +1,9 @@
 {
-  "name": "@bedlamhotel/attrmanager",
+  "name": "@bedlamhotel/attr-manager",
   "type": "module",
   "version": "0.2.0",
   "description": "Utility library for toggling HTML attributes and optionally restoring them to their original values.",
-  "homepage": "https://github.com/ctorgalson/bh-attrmanager",
+  "homepage": "https://github.com/ctorgalson/attr-manager",
   "license": "GPL-2.0-or-later",
   "main": "dist/js/attr-manager.js",
   "module": "dist/js/attr-manager.esm.js",
@@ -24,7 +24,7 @@
   "author": "Christopher Torgalson",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ctorgalson/bh-attrmanager.git"
+    "url": "git+https://github.com/ctorgalson/attrmanager.git"
   },
   "files": [
     "dist/*"

@@ -21,13 +21,13 @@ For detailed API documentation and reference, see:
 ## Installation
 
 ```bash
-npm install @bedlamhotel/attrmanager
+npm install @bedlamhotel/attr-manager
 ```
 
 ## Basic Usage
 
 ```typescript
-import AttrManager from '@bedlamhotel/attrmanager';
+import AttrManager from '@bedlamhotel/attr-manager';
 
 const manager = new AttrManager(element, {
   'data-active': {
