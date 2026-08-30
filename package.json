@@ -24,7 +24,7 @@
   "author": "Christopher Torgalson",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ctorgalson/attrmanager.git"
+    "url": "git+https://github.com/ctorgalson/attr-manager.git"
   },
   "files": [
     "dist/*"
