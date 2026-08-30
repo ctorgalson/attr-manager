@@ -6,6 +6,7 @@ import typescript from "@rollup/plugin-typescript";
 const require = createRequire(import.meta.url);
 const pkg = require("./package.json");
 const plugins = [nodeResolve(), typescript({ tsconfig: "./tsconfig.json" })];
+const banner = `/*! attr-manager ${pkg.version} — © Christopher Torgalson */`;
 const minifyPlugin = terser({
   compress: {
     module: true,
@@ -13,9 +14,6 @@ const minifyPlugin = terser({
     toplevel: true,
   },
   ecma: 2020,
-  format: {
-    preamble: `/*! attr-manager ${pkg.version} — © Christopher Torgalson */`,
-  },
   keep_classnames: true,
   keep_fnames: false,
 });
@@ -30,29 +28,32 @@ export default {
   plugins: plugins,
   output: [
     // UMD
-    { file: "dist/js/attr-manager.js", ...umdCfg },
+    { banner, file: "dist/js/attr-manager.js", ...umdCfg },
     {
+      banner,
       file: "dist/js/attr-manager.min.js",
       ...umdCfg,
-      plugins: [ minifyPlugin ],
+      plugins: [minifyPlugin],
     },
     // ESM
-    { file: "dist/js/attr-manager.esm.js", format: "esm" },
+    { banner, file: "dist/js/attr-manager.esm.js", format: "esm" },
     {
-      file: "dist/js/attr-manager.esm.js",
+      banner,
+      file: "dist/js/attr-manager.esm.min.js",
       format: "esm",
-      plugins: [ minifyPlugin ],
+      plugins: [minifyPlugin],
     },
     // CJS
-    { file: "dist/js/attr-manager.cjs", format: "cjs", exports: "default" },
+    { banner, file: "dist/js/attr-manager.cjs", format: "cjs", exports: "default" },
     {
-      file: "dist/js/attr-manager.cjs",
+      banner,
+      file: "dist/js/attr-manager.min.cjs",
       format: "cjs",
       exports: "default",
-      plugins: [ minifyPlugin ],
+      plugins: [minifyPlugin],
     },
   ],
   watch: {
-		exclude: "node_modules/**",
-	},
+    exclude: "node_modules/**",
+  },
 };
