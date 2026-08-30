@@ -1,7 +1,7 @@
 {
   "name": "@bedlamhotel/attrmanager",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Utility library for toggling HTML attributes and optionally restoring them to their original values.",
   "homepage": "https://github.com/ctorgalson/bh-attrmanager",
   "license": "GPL-2.0-or-later",
