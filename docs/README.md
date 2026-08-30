@@ -1,8 +1,8 @@
-**@bedlamhotel/attrmanager**
+**@bedlamhotel/attr-manager**
 
 ---
 
-# @bedlamhotel/attrmanager
+# @bedlamhotel/attr-manager
 
 ## Classes
 

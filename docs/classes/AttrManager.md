@@ -1,12 +1,12 @@
-[**@bedlamhotel/attrmanager**](../README.md)
+[**@bedlamhotel/attr-manager**](../README.md)
 
 ---
 
-[@bedlamhotel/attrmanager](../README.md) / AttrManager
+[@bedlamhotel/attr-manager](../README.md) / AttrManager
 
 # Class: AttrManager
 
-Defined in: [attr-manager.ts:50](https://github.com/ctorgalson/attr-manager/blob/df85440b4e3c6eb06f917a773fb1c70228c95edb/src/attr-manager.ts#L50)
+Defined in: [attr-manager.ts:50](https://github.com/ctorgalson/attr-manager/blob/88d888a35d472de98b174d1200aa837fb071a8e8/src/attr-manager.ts#L50)
 
 A class used to create and/or enforce HTMLElement attribute values.
 
@@ -16,7 +16,7 @@ A class used to create and/or enforce HTMLElement attribute values.
 
 > **new AttrManager**(`el`, `config`, `restorers?`): `AttrManager`
 
-Defined in: [attr-manager.ts:79](https://github.com/ctorgalson/attr-manager/blob/df85440b4e3c6eb06f917a773fb1c70228c95edb/src/attr-manager.ts#L79)
+Defined in: [attr-manager.ts:79](https://github.com/ctorgalson/attr-manager/blob/88d888a35d472de98b174d1200aa837fb071a8e8/src/attr-manager.ts#L79)
 
 Constructs a new AttrManager instance.
 
@@ -50,7 +50,7 @@ Optional restorer array for lifecycle management.
 
 > **destroy**(): `void`
 
-Defined in: [attr-manager.ts:171](https://github.com/ctorgalson/attr-manager/blob/df85440b4e3c6eb06f917a773fb1c70228c95edb/src/attr-manager.ts#L171)
+Defined in: [attr-manager.ts:171](https://github.com/ctorgalson/attr-manager/blob/88d888a35d472de98b174d1200aa837fb071a8e8/src/attr-manager.ts#L171)
 
 Clears internal state and self-removes from `restorers`.
 
@@ -66,7 +66,7 @@ Use this to clean up state without affecting the DOM.
 
 > **restore**(`teardown?`): `void`
 
-Defined in: [attr-manager.ts:156](https://github.com/ctorgalson/attr-manager/blob/df85440b4e3c6eb06f917a773fb1c70228c95edb/src/attr-manager.ts#L156)
+Defined in: [attr-manager.ts:156](https://github.com/ctorgalson/attr-manager/blob/88d888a35d472de98b174d1200aa837fb071a8e8/src/attr-manager.ts#L156)
 
 Restores original state of attributes.
 
@@ -89,7 +89,7 @@ If `true` (default), also clears internal state and self-removes from
 
 > **toggle**(`condition?`): `void`
 
-Defined in: [attr-manager.ts:139](https://github.com/ctorgalson/attr-manager/blob/df85440b4e3c6eb06f917a773fb1c70228c95edb/src/attr-manager.ts#L139)
+Defined in: [attr-manager.ts:139](https://github.com/ctorgalson/attr-manager/blob/88d888a35d472de98b174d1200aa837fb071a8e8/src/attr-manager.ts#L139)
 
 Toggles state of attributes managed by this instance.
 
