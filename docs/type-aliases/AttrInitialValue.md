@@ -8,6 +8,6 @@
 
 > **AttrInitialValue** = `"whenTrue"` \| `"whenFalse"` \| `null`
 
-Defined in: [attr-manager.ts:4](https://github.com/ctorgalson/attr-manager/blob/8bbb69282ea2012ea062c2fc2b6fd7b20aaf61cc/src/attr-manager.ts#L4)
+Defined in: [attr-manager.ts:4](https://github.com/ctorgalson/attr-manager/blob/df85440b4e3c6eb06f917a773fb1c70228c95edb/src/attr-manager.ts#L4)
 
 A type used to define possible values for AttrConfig's `initial` prop.
