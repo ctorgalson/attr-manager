@@ -2,7 +2,7 @@
  * Tests for BhAttrManager - Lifecycle Cleanup (destroy)
  */
 import { describe, expect, it } from "vitest";
-import BhAttrManager, { BhAttrRestorerEntry } from "../src/bh-attrmanager";
+import BhAttrManager, { BhAttrRestorerEntry } from "../src/attr-manager";
 import { buildTestDom, createManager, setup } from "./fixtures";
 
 setup();

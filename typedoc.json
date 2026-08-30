@@ -1,6 +1,6 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "entryPoints": ["./src/bh-attrmanager.ts"],
+  "entryPoints": ["./src/attr-manager.ts"],
   "formatWithPrettier": true,
   "plugin": [
     "typedoc-plugin-coverage",

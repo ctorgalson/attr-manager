@@ -1,12 +1,12 @@
-[**bh-attrmanager**](../README.md)
+[**@bedlamhotel/attrmanager**](../README.md)
 
 ---
 
-[bh-attrmanager](../README.md) / BhAttrManager
+[@bedlamhotel/attrmanager](../README.md) / AttrManager
 
-# Class: BhAttrManager
+# Class: AttrManager
 
-Defined in: bh-attrmanager.ts:50
+Defined in: attr-manager.ts:50
 
 A class used to create and/or enforce HTMLElement attribute values.
 
@@ -14,11 +14,11 @@ A class used to create and/or enforce HTMLElement attribute values.
 
 ### Constructor
 
-> **new BhAttrManager**(`el`, `config`, `restorers?`): `BhAttrManager`
+> **new AttrManager**(`el`, `config`, `restorers?`): `AttrManager`
 
-Defined in: bh-attrmanager.ts:79
+Defined in: attr-manager.ts:79
 
-Constructs a new BhAttrManager instance.
+Constructs a new AttrManager instance.
 
 #### Parameters
 
@@ -30,19 +30,19 @@ The HTMLElement to manage.
 
 ##### config
 
-[`BhAttrConfig`](../type-aliases/BhAttrConfig.md)
+[`AttrConfig`](../type-aliases/AttrConfig.md)
 
 The attribute configuration.
 
 ##### restorers?
 
-[`BhAttrRestorerEntry`](../interfaces/BhAttrRestorerEntry.md)[]
+[`RestorerEntry`](../interfaces/RestorerEntry.md)[]
 
 Optional restorer array for lifecycle management.
 
 #### Returns
 
-`BhAttrManager`
+`AttrManager`
 
 ## Methods
 
@@ -50,7 +50,7 @@ Optional restorer array for lifecycle management.
 
 > **destroy**(): `void`
 
-Defined in: bh-attrmanager.ts:171
+Defined in: attr-manager.ts:171
 
 Clears internal state and self-removes from `restorers`.
 
@@ -66,7 +66,7 @@ Use this to clean up state without affecting the DOM.
 
 > **restore**(`teardown?`): `void`
 
-Defined in: bh-attrmanager.ts:156
+Defined in: attr-manager.ts:156
 
 Restores original state of attributes.
 
@@ -89,7 +89,7 @@ If `true` (default), also clears internal state and self-removes from
 
 > **toggle**(`condition?`): `void`
 
-Defined in: bh-attrmanager.ts:139
+Defined in: attr-manager.ts:139
 
 Toggles state of attributes managed by this instance.
 

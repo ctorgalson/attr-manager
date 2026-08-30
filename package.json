@@ -1,19 +1,19 @@
 {
-  "name": "bh-attrmanager",
+  "name": "@bedlamhotel/attrmanager",
   "type": "module",
   "version": "0.0.0",
   "description": "Utility library for toggling HTML attributes and optionally restoring them to their original values.",
   "homepage": "https://github.com/ctorgalson/bh-attrmanager",
   "license": "GPL-2.0-or-later",
-  "main": "dist/js/bh-attrmanager.js",
-  "module": "dist/js/bh-attrmanager.esm.js",
-  "types": "dist/js/bh-attrmanager.d.ts",
+  "main": "dist/js/attr-manager.js",
+  "module": "dist/js/attr-manager.esm.js",
+  "types": "dist/js/attr-manager.d.ts",
   "exports": {
     ".": {
-      "import": "dist/js/bh-attrmanager.esm.js",
-      "browser": "dist/js/bh-attrmanager.js",
-      "require": "dist/js/bh-attrmanager.cjs",
-      "types": "dist/js/bh-attrmanager.d.ts"
+      "import": "dist/js/attr-manager.esm.js",
+      "browser": "dist/js/attr-manager.js",
+      "require": "dist/js/attr-manager.cjs",
+      "types": "dist/js/attr-manager.d.ts"
     },
     "./*": "./*"
   },
@@ -60,9 +60,7 @@
     "typedoc-plugin-rename-defaults": "^0.7.3",
     "typescript": "~6.0.2",
     "vite": "^8.2.2",
-    "vitest": "^4.1.11"
-  },
-  "dependencies": {
+    "vitest": "^4.1.11",
     "@rollup/plugin-node-resolve": "^16.0.3"
   }
 }

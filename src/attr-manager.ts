@@ -1,12 +1,12 @@
 /**
- * A type used to define possible values for BhAttrConfig's `initial` prop.
+ * A type used to define possible values for AttrConfig's `initial` prop.
  */
-export type BhAttrInitialValue = "whenTrue" | "whenFalse" | null;
+export type AttrInitialValue = "whenTrue" | "whenFalse" | null;
 
 /**
  * A type used to define the config option used by the constructor.
  */
-export type BhAttrConfig = Record<
+export type AttrConfig = Record<
   string,
   {
     /** The value set for an attribute when currentState is `true`. */
@@ -14,7 +14,7 @@ export type BhAttrConfig = Record<
     /** The value set for an attribute when currentState is `false`. */
     whenFalse?: string | null;
     /** The value set for an attribute in the constructor. */
-    initial?: BhAttrInitialValue;
+    initial?: AttrInitialValue;
     /** Whether this attribute will be ignored by `.toggle()`. */
     fixed?: boolean;
   }
@@ -23,7 +23,7 @@ export type BhAttrConfig = Record<
 /**
  * An internal type: guarantees `falseValue` is never undefined.
  */
-export interface BhNormalizedAttr {
+export interface NormalizedAttr {
   /** The value set for an attribute when currentState is `true`. */
   trueValue: string | null;
   /** The value set for an attribute when currentState is `false`. */
@@ -37,7 +37,7 @@ export interface BhNormalizedAttr {
 /**
  * An entry in the `restorers` array.
  */
-export interface BhAttrRestorerEntry {
+export interface RestorerEntry {
   /** Unique ID for self-removal. */
   id: string;
   /** Restore method. */
@@ -47,17 +47,17 @@ export interface BhAttrRestorerEntry {
 /**
  * A class used to create and/or enforce HTMLElement attribute values.
  */
-export default class BhAttrManager {
+export default class AttrManager {
   /** Unique ID for self-removal from `restorers` array. */
   private readonly id: string;
-  /** An array of the attributes under management in BhNormalizedAttr form. */
-  private items: BhNormalizedAttr[] = [];
+  /** An array of the attributes under management in NormalizedAttr form. */
+  private items: NormalizedAttr[] = [];
   /** An array of the attribute values (used to restore initial DOM state). */
   private original: [string, string | null][] = [];
   /** A var used to track the state of the attributes under management. */
   private currentState: boolean = false;
   /** Optional reference to the restorer array for self-removal. */
-  private readonly restorers?: BhAttrRestorerEntry[];
+  private readonly restorers?: RestorerEntry[];
 
   /**
    * Generates a unique ID for this instance.
@@ -67,7 +67,7 @@ export default class BhAttrManager {
   }
 
   /**
-   * Constructs a new BhAttrManager instance.
+   * Constructs a new AttrManager instance.
    *
    * @param el
    *   The HTMLElement to manage.
@@ -78,13 +78,13 @@ export default class BhAttrManager {
    */
   constructor(
     private readonly el: HTMLElement,
-    config: BhAttrConfig,
-    restorers?: BhAttrRestorerEntry[],
+    config: AttrConfig,
+    restorers?: RestorerEntry[],
   ) {
     let hasExplicitInitial = false;
 
     // Generate unique ID for self-removal from restorers
-    this.id = BhAttrManager.createId();
+    this.id = AttrManager.createId();
 
     for (const [
       name,
@@ -92,7 +92,7 @@ export default class BhAttrManager {
     ] of Object.entries(config)) {
       if (trueValue === undefined) {
         throw new Error(
-          "BhAttrManager: each attribute must supply a `whenTrue` value.",
+          "AttrManager: each attribute must supply a `whenTrue` value.",
         );
       }
 
@@ -101,7 +101,7 @@ export default class BhAttrManager {
         !["whenTrue", "whenFalse", null].includes(initial)
       ) {
         throw new Error(
-          "BhAttrManager: if attributes supply an `initial` value, it must be one of `whenTrue`, `whenFalse`, or `null`.",
+          "AttrManager: if attributes supply an `initial` value, it must be one of `whenTrue`, `whenFalse`, or `null`.",
         );
       }
 

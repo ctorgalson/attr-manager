@@ -6,6 +6,7 @@ import typescript from "@rollup/plugin-typescript";
 const require = createRequire(import.meta.url);
 const pkg = require("./package.json");
 const plugins = [nodeResolve(), typescript({ tsconfig: "./tsconfig.json" })];
+const banner = `/*! attr-manager ${pkg.version} — © Christopher Torgalson */`;
 const minifyPlugin = terser({
   compress: {
     module: true,
@@ -13,46 +14,46 @@ const minifyPlugin = terser({
     toplevel: true,
   },
   ecma: 2020,
-  format: {
-    preamble: `/*! bh-attrmanager ${pkg.version} — © Christopher Torgalson */`,
-  },
   keep_classnames: true,
   keep_fnames: false,
 });
 const umdCfg = {
   format: "umd",
-  name: "BhAttrManager",
+  name: "AttrManager",
   exports: "default",
 };
 
 export default {
-  input: "src/bh-attrmanager.ts",
+  input: "src/attr-manager.ts",
   plugins: plugins,
   output: [
     // UMD
-    { file: "dist/js/bh-attrmanager.js", ...umdCfg },
+    { banner, file: "dist/js/attr-manager.js", ...umdCfg },
     {
-      file: "dist/js/bh-attrmanager.min.js",
+      banner,
+      file: "dist/js/attr-manager.min.js",
       ...umdCfg,
-      plugins: [ minifyPlugin ],
+      plugins: [minifyPlugin],
     },
     // ESM
-    { file: "dist/js/bh-attrmanager.esm.js", format: "esm" },
+    { banner, file: "dist/js/attr-manager.esm.js", format: "esm" },
     {
-      file: "dist/js/bh-attrmanager.esm.js",
+      banner,
+      file: "dist/js/attr-manager.esm.min.js",
       format: "esm",
-      plugins: [ minifyPlugin ],
+      plugins: [minifyPlugin],
     },
     // CJS
-    { file: "dist/js/bh-attrmanager.cjs", format: "cjs", exports: "default" },
+    { banner, file: "dist/js/attr-manager.cjs", format: "cjs", exports: "default" },
     {
-      file: "dist/js/bh-attrmanager.cjs",
+      banner,
+      file: "dist/js/attr-manager.min.cjs",
       format: "cjs",
       exports: "default",
-      plugins: [ minifyPlugin ],
+      plugins: [minifyPlugin],
     },
   ],
   watch: {
-		exclude: "node_modules/**",
-	},
+    exclude: "node_modules/**",
+  },
 };
