@@ -24,17 +24,6 @@ For detailed API documentation and reference, see:
 npm install @bedlamhotel/attrmanager
 ```
 
-**Note:** This package is published to GitHub Packages. To install, add an
-`.npmrc` file to your project (or use `--registry`):
-
-```
-@bedlamhotel:registry=https://npm.pkg.github.com
-```
-
-You'll also need a GitHub personal access token with `read:packages` scope.
-See the [GitHub Packages docs](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages)
-for details.
-
 ## Basic Usage
 
 ```typescript
