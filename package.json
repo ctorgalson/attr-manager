@@ -24,7 +24,7 @@
   "author": "Christopher Torgalson",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ctorgalson/bh-attrmanager"
+    "url": "git+https://github.com/ctorgalson/bh-attrmanager.git"
   },
   "files": [
     "dist/*"
