@@ -10,10 +10,10 @@
   "types": "dist/js/attr-manager.d.ts",
   "exports": {
     ".": {
-      "import": "dist/js/attr-manager.esm.js",
-      "browser": "dist/js/attr-manager.js",
-      "require": "dist/js/attr-manager.cjs",
-      "types": "dist/js/attr-manager.d.ts"
+      "import": "./dist/js/attr-manager.esm.js",
+      "browser": "./dist/js/attr-manager.js",
+      "require": "./dist/js/attr-manager.cjs",
+      "types": "./dist/js/attr-manager.d.ts"
     },
     "./*": "./*"
   },
